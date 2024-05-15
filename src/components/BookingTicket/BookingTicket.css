@@ -1,0 +1,19 @@
+.drop-box {
+    position: relative;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    padding: 15px 20px;
+}
+
+.drop-box .icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #ffffff; /* Adjust icon color */
+}
+.from-to-station-tag {
+    margin: 10px 15px;
+}
+

@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import LoginForm from "./components/LoginForm/LoginForm";
+import RegistrationForm from "./components/RegisterForm/RegistrationForm";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
+import ResetPassword from "./components/ResetPassword/ResetPassword";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./components/Home/HomePage";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import BookingTicket from "./components/BookingTicket/BookingTicket";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+      <ToastContainer />
+        <Routes>
+          <Route exact path="/register" element={<RegistrationForm />} />
+          <Route exact path="/login" element={<LoginForm />} />
+          <Route exact path="/forgotPassword" element={<ForgotPassword />} />
+          <Route exact path="/resetPassword" element={<ResetPassword />} />
+          <Route exact path="/home" element={<HomePage />} />
+          <Route exact path="/booking" element={<BookingTicket />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
