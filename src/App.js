@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/login" element={<LoginForm />} />
           <Route exact path="/forgotPassword" element={<ForgotPassword />} />
           <Route exact path="/resetPassword" element={<ResetPassword />} />
-          <Route exact path="/home" element={<HomePage />} />
+          <Route exact path="/" element={<HomePage />} />
           <Route exact path="/booking" element={<BookingTicket />} />
         </Routes>
       </div>
