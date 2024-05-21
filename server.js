@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const sql = require('mssql');
 const cors = require('cors');
 const config = require('./dbConfig'); 
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -71,6 +72,10 @@ app.post('/api/user/login', async (req, res) => {
         console.error('Error occurred during user login:', err);
         res.status(500).send('Error occurred during user login');
     }
+});
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname,"src","build","index.html"))
 });
 
 // Start the server
