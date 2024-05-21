@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sql = require('mssql');
-const cors = require('cors');
+// const cors = require('cors');
 const config = require('./dbConfig'); 
 const path = require('path');
 
@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
 
 // Database connection
 sql.connect(config, (err) => {
