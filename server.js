@@ -74,6 +74,8 @@ app.post('/api/user/login', async (req, res) => {
     }
 });
 
+app.use(express.static("./src/build"));
+
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname,"src","build","index.html"))
 });
